@@ -2,10 +2,14 @@ import React from 'react';
 import './App.css';
 import io from 'socket.io-client';
 
-const socket = io.connect('http://localhost:8080');
+const socket = io.connect('http://localhost:8080', { reconnect: true });
 
 socket.on('connect', () => {
   console.log('Successfully connected!');
+});
+
+socket.on('disconnect', function() {
+  console.log('Got disconnect!');
 });
 
 function addUser() {
