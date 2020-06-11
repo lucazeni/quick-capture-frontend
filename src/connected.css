@@ -1,0 +1,16 @@
+.connected {
+    /* padding-left: 50px; */
+    background-color: #006200;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.disconnected {
+    /* padding-left: 50px; */
+    background-color: red;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
