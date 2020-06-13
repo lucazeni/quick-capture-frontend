@@ -1,0 +1,33 @@
+
+.room-container {
+    border: 2px solid white;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    width: calc(560px + 3vmin);
+}
+
+.join-button {
+    text-align: center;
+    width: 100px;
+    min-width: 50px;
+    height: calc(0px + 3vmin);
+    min-height: 25px;
+    border-radius: 10px;
+}
+
+.room-title {
+    text-align: center;
+    border-bottom: 1px solid white;
+    background-color: white;
+    color: #282c34;
+}
+
+.left-align {
+    font-size: 14px;
+    padding-left: 10px;
+    text-align: left;
+}

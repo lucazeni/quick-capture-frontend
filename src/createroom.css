@@ -1,0 +1,13 @@
+.create-room-container {
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.create-room-button {
+    border-radius: 8px;
+    width: 200px;
+    height: 25px;
+}

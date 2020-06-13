@@ -1,7 +1,6 @@
 .title {
-    /* padding-left: 50px; */
     position: absolute;
-    margin-top: 150px;
+    margin-top: 50px;
     text-align: center;
     width: 100%;
     color: white;
@@ -9,4 +8,5 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border: 1px solid white;
     border-radius: 100px;
+    padding-bottom: 0px !important;
 }

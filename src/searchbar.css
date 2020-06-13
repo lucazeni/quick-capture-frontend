@@ -1,0 +1,25 @@
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    padding-bottom: 30px;
+    
+}
+
+ .search-button {
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+ .text-box {
+ width: calc(400px + 5vmin);
+ height: 25px;
+ background-color:transparent;
+  color: #808080;
+  font-size: 20px;
+  border-radius: 8px;
+
+} 
