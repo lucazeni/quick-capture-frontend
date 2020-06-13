@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Rooms from './rooms';
-export default class App extends React.Component {
+export default class ActivePage extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -26,13 +26,12 @@ export default class App extends React.Component {
     </header>);
     }
     else if (this.state.page ==="ROOMS") {
-      return(<header>
-      <div>
-      <Rooms />
-        
-      </div>
-    </header>);
-    }
+      return(
+        <div>
+          <Rooms />
+        </div>
+   
+       )}
     return (this.state.page);
   }
 }

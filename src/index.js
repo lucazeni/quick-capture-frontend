@@ -5,12 +5,13 @@ import * as serviceWorker from './serviceWorker';
 import Connected from './connected';
 import App from './App';
 import Title from './title';
+import ActivePage from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-  <Connected />
-  <Title/>
-  <App />
+    <Connected />
+    <Title/>
+    <ActivePage />
   </React.StrictMode>,
   document.getElementById('root')
 );

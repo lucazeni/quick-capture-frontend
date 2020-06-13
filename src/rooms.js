@@ -17,6 +17,14 @@ export default class Rooms extends React.Component {
                 <CreateRoom />
                 <Room name="test"/>
                 <Room name="luca"/>
+                <Room name="test"/>
+                <Room name="luca"/>
+                <Room name="test"/>
+                <Room name="luca"/>
+                <Room name="test"/>
+                <Room name="luca"/>
+                <Room name="test"/>
+                <Room name="luca"/>
             </div>
         );
     }

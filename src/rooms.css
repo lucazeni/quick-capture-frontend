@@ -8,8 +8,28 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 200px;
     font-size: calc(10px + 2vmin);
     color: white;
-    overflow-y: scroll;
+    width: 855px;
+    height: 300px;
+    margin:0 auto;
+    text-align: center;
+    overflow-y: auto;
+    border: 1px solid white;
+    border-radius: 8px;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
