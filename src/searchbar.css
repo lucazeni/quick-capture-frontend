@@ -15,7 +15,7 @@
 }
 
  .text-box {
- width: calc(400px + 5vmin);
+ width: calc(200px + 5vmin);
  height: 25px;
  background-color:transparent;
   color: #808080;

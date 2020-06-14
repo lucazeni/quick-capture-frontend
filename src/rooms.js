@@ -11,10 +11,11 @@ export default class Rooms extends React.Component {
 
     render() {
         return (
+        <div>
+        <CreateRoom />
             <div className="rooms-container">
                 <h2 className="rooms-title">ROOMS</h2>
                 <SearchBar />
-                <CreateRoom />
                 <Room name="test"/>
                 <Room name="luca"/>
                 <Room name="test"/>
@@ -25,6 +26,7 @@ export default class Rooms extends React.Component {
                 <Room name="luca"/>
                 <Room name="test"/>
                 <Room name="luca"/>
+            </div>
             </div>
         );
     }
