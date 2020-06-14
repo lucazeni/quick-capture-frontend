@@ -20,7 +20,7 @@ export default class ActivePage extends React.Component {
       return (<header className="App-header">
       <label className="textBoxLabel">Nickname:</label>
       <br></br>
-      <input className="textBox" type="text" name="name" />
+      <input className="textBox" type="text" name="name" maxlength="15"/>
       <br></br>
       <input className="button" onClick={this.goToRooms} type="button" value="Play" />
     </header>);

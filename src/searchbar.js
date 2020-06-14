@@ -8,7 +8,7 @@ export default class SearchBar extends React.Component {
     render() {
         return (
             <div className="search-bar">
-             <input className="text-box" type="text" placeholder="Search.." name="search2"></input>
+             <input className="text-box" type="text" placeholder="Search.." name="search2" maxlength="15"></input>
             <button className="search-button" type="submit">Search</button>
             </div>
         );
