@@ -11,8 +11,7 @@ export default class Room extends React.Component {
             <div className='room-container'>
                 <div className="room-title">{this.props.name}</div>
                 <button className="join-button">Join</button>
-                <div className="left-align">host:</div>
-                <div className="left-align">party size:</div>
+                <div className="left-align">Host:</div>
             </div>
         );
     }

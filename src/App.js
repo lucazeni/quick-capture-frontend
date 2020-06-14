@@ -18,9 +18,7 @@ export default class ActivePage extends React.Component {
   render() {
     if(this.state.page ==="HOME") {
       return (<header className="App-header">
-      <label className="textBoxLabel">Nickname:</label>
-      <br></br>
-      <input className="textBox" type="text" name="name" maxlength="15"/>
+      <input className="textBox" placeholder="Nickname.." type="text" name="name" maxlength="15"/>
       <br></br>
       <input className="button" onClick={this.goToRooms} type="button" value="Play" />
     </header>);

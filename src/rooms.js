@@ -11,19 +11,36 @@ export default class Rooms extends React.Component {
     
         this.state = {
             rooms: [],
-            name: ''
+            name: '',
+            showRooms: []
 
             
         };
         this.appendRoom = this.appendRoom.bind(this);
         this.updateName = this.updateName.bind(this);
+        this.filterRooms = this.filterRooms.bind(this);
     }
   
+    filterRooms(event) {
+        if (!event.target.value) {
+            this.setState({
+                showRooms: this.state.rooms
+               });
+        }
+        else {
+        this.setState({
+            showRooms: this.state.rooms.filter((room) => room.props.name.includes(event.target.value))
+           });
+        }
+    }
+
     appendRoom(){
         this.setState({
-            rooms: [...this.state.rooms, <Room name={this.state.name}/>]
+            rooms: [...this.state.rooms, <Room name={this.state.name}/>],
+            showRooms: [...this.state.showRooms, <Room name={this.state.name}/>]
         });
     }
+
     updateName(event){
         this.setState({
          name: event.target.value
@@ -36,9 +53,9 @@ export default class Rooms extends React.Component {
                 <CreateRoom appendRoom={this.appendRoom} updateName={this.updateName}/>
                 <div className="rooms-container">
                     <h2 className="rooms-title">ROOMS</h2>
-                    <SearchBar/>
+                    <SearchBar filterRooms={this.filterRooms}/>
                     <div className="box-container">
-                    {this.state.rooms.map(room => room)}
+                    {this.state.showRooms.map(room => room)}
                 </div>
                 </div>
             </div>
