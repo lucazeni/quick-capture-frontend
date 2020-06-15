@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
 import Rooms from './rooms';
+import User from './user';
 export default class ActivePage extends React.Component {
   constructor() {
     super();
     this.state = {
       page: 'HOME'
     };
+    this.goToRooms = this.goToRooms.bind(this);
   }
 
   goToRooms = () => {
@@ -14,22 +16,14 @@ export default class ActivePage extends React.Component {
       page: 'ROOMS'
     })
   }
-   
+  
   render() {
     if(this.state.page ==="HOME") {
-      return (<header className="App-header">
-      <input className="textBox" placeholder="Nickname.." type="text" name="name" maxlength="15"/>
-      <br></br>
-      <input className="button" onClick={this.goToRooms} type="button" value="Play" />
-    </header>);
+      return (<div><User goToRooms={this.goToRooms}/></div>);
     }
     else if (this.state.page ==="ROOMS") {
-      return(
-        <div>
-          <Rooms />
-        </div>
-   
-       )}
+      return(<div><Rooms /></div>);
+    }
     return (this.state.page);
   }
 }
