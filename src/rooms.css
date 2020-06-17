@@ -19,6 +19,15 @@
     border-radius: 8px;
 }
 
+.nickname-container {
+  background-color: white;
+  width: 100%;
+   padding-top: 10px;
+   color: #808080;
+   font-size: 20px;
+   padding-bottom: 10px;
+
+}
 ::-webkit-scrollbar {
     width: 10px;
   }

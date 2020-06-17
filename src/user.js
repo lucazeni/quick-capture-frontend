@@ -8,7 +8,7 @@ export default class User extends React.Component {
     render() {
         return (
             <div className="user-container">
-            <input className="textBox" placeholder="Nickname.." type="text" name="name" maxlength="15"/>
+            <input className="textBox" onChange={this.props.onChangeNickname} placeholder="Nickname.." type="text" name="name" maxlength="15"/>
             <br></br>
             <input className="button" onClick={this.props.goToRooms} type="button" value="Play" />
             </div>
