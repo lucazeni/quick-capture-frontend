@@ -19,6 +19,7 @@ export default class Rooms extends React.Component {
         this.appendRoom = this.appendRoom.bind(this);
         this.updateName = this.updateName.bind(this);
         this.filterRooms = this.filterRooms.bind(this);
+        this.joinRoom = this.joinRoom.bind(this);
     }
   
     filterRooms(event) {
@@ -47,18 +48,21 @@ export default class Rooms extends React.Component {
         });
     }
 
+    joinRoom(test){
+        console.log(test);
+    }
+
     render() {
         return (
             <div>
-                
                 <CreateRoom appendRoom={this.appendRoom} updateName={this.updateName}/>
                 <div className="rooms-container">
-                <div className="nickname-container">Nickname: {this.props.nickname}</div>
+                    <div className="nickname-container">Nickname: {this.props.nickname}</div>
                     <h2 className="rooms-title">ROOMS</h2>
                     <SearchBar filterRooms={this.filterRooms}/>
                     <div className="box-container">
-                    {this.state.showRooms.map(room => room)}
-                </div>
+                        {this.state.showRooms.map(room => <Room joinRoom={this.joinRoom} roomName={room.props.roomName} host={room.props.host}/>)}
+                    </div>
                 </div>
             </div>
         );

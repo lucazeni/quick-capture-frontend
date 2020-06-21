@@ -6,11 +6,12 @@ export default class Room extends React.Component {
         super(props);
     }
 
+    
     render() {
         return (
             <div className='room-container'>
                 <div className="room-title">{this.props.roomName}</div>
-                <button className="join-button">Join</button>
+                <button onClick={this.props.joinRoom} className="join-button">Join</button>
                 <div className="left-align">Host: {this.props.host}</div>
             </div>
         );

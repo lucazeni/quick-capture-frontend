@@ -24,5 +24,7 @@
 
 } 
 .plus-icon {
-    padding-right: 5px;
+    padding-right: 10px;
+    width: 30px;
+    height: 30px;
 }
