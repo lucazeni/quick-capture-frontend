@@ -10,7 +10,7 @@ export default class Room extends React.Component {
     }
 
     joinRoom = () => {
-        this.props.callbackFromParent(this.state.roomName);
+        this.props.joinRoomCallback(this.state.roomName);
     }
 
 

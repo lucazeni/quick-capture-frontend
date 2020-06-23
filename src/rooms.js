@@ -12,14 +12,13 @@ export default class Rooms extends React.Component {
         this.state = {
             rooms: [],
             roomName: '',
-            showRooms: []
+            showRooms: [],
 
             
         };
         this.appendRoom = this.appendRoom.bind(this);
         this.updateName = this.updateName.bind(this);
         this.filterRooms = this.filterRooms.bind(this);
-        this.myCallback = this.myCallback.bind(this);
     }
   
     filterRooms(event) {
@@ -49,9 +48,6 @@ export default class Rooms extends React.Component {
         });
     }
 
-    myCallback = (dataFromChild) => {
-        console.log(dataFromChild);
-    }
 
     render() {
         return (
@@ -62,7 +58,7 @@ export default class Rooms extends React.Component {
                     <h2 className="rooms-title">ROOMS</h2>
                     <SearchBar filterRooms={this.filterRooms}/>
                     <div className="box-container">
-                        {this.state.showRooms.map(room => <Room callbackFromParent={this.myCallback} roomName={room.props.roomName} host={room.props.host}/>)}
+                        {this.state.showRooms.map(room => <Room joinRoomCallback={this.props.goToRoom} roomName={room.props.roomName} host={room.props.host}/>)}
                     </div>
                 </div>
             </div>

@@ -26,7 +26,8 @@ export default class ActivePage extends React.Component {
     })
   }
 
-  goToRoom = () => {
+  goToRoom = (room) => {
+    console.log(room);
     this.setState({
       page: 'ROOM'
     })
