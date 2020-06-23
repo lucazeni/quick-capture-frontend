@@ -1,13 +1,14 @@
 import React from 'react';
 import './App.css';
 import Rooms from './rooms';
+import Pregame from './pregame';
 import User from './user';
 export default class ActivePage extends React.Component {
   constructor() {
     super();
     this.state = {
       nickname: '',
-      page: 'HOME'
+      page: 'HOME',
     };
     this.goToRooms = this.goToRooms.bind(this);
     this.goToRoom = this.goToRoom.bind(this);
@@ -26,10 +27,10 @@ export default class ActivePage extends React.Component {
     })
   }
 
-  goToRoom = (room) => {
-    console.log(room);
+  goToRoom = (roomName) => {
     this.setState({
-      page: 'ROOM'
+      page: 'PREGAME',
+      roomName
     })
   }
   
@@ -40,8 +41,8 @@ export default class ActivePage extends React.Component {
     else if (this.state.page ==="ROOMS") {
       return(<div><Rooms goToRoom={this.goToRoom} nickname={this.state.nickname}/></div>);
     }
-    else if (this.state.page ==="ROOM") {
-      return(<div>you're in a room w/ me</div>);
+    else if (this.state.page ==="PREGAME") {
+      return(<div><Pregame roomName={this.state.roomName} /></div>);
     }
     return (this.state.page);
   }

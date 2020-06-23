@@ -5,7 +5,8 @@
     font-size: calc(10px + 2vmin);
     color: white;
     padding-bottom: 30px;
-    padding-left: 500px;
+    padding-top: 30px;
+    padding-right: calc(100% / 2);
 }
 
  .create-button {

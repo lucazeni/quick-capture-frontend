@@ -51,17 +51,18 @@ export default class Rooms extends React.Component {
 
     render() {
         return (
-            <div>
-                <CreateRoom appendRoom={this.appendRoom} updateName={this.updateName}/>
+         
+               
                 <div className="rooms-container">
                     <div className="nickname-container">Nickname: {this.props.nickname}</div>
+                    <CreateRoom appendRoom={this.appendRoom} updateName={this.updateName}/>
                     <h2 className="rooms-title">ROOMS</h2>
                     <SearchBar filterRooms={this.filterRooms}/>
                     <div className="box-container">
                         {this.state.showRooms.map(room => <Room joinRoomCallback={this.props.goToRoom} roomName={room.props.roomName} host={room.props.host}/>)}
                     </div>
                 </div>
-            </div>
+         
         );
     }
 }
