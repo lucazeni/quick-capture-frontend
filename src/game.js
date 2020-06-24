@@ -15,7 +15,10 @@ export default class Game extends React.Component {
 
                 </div>
                 <div className="chat">
-                    <input placeholder="Type a message.." className="chat-textbox"></input>
+                    <div className="chat-title">Chat</div>
+                    <div className="chat-textbox">
+                    <input placeholder="Type a message.." ></input>
+                    </div>
                 </div>
             </div>
             </div>

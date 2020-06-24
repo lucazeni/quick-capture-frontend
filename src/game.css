@@ -1,7 +1,7 @@
 .pregame-container {
     display: flex;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
 }
 
 .game-container {
@@ -16,28 +16,33 @@
 
 
 .chat {
-    background-color: 	grey;
-    margin-top: -10px;
-    margin-right: -10px;
+    background-color: 	lightgrey;
     width: 200px;
     height: 600px;
     border: 10px solid white;
     border-radius: 10px;
     display: inline-block;
+    overflow-y: scroll;
  
 
 }
 
+.chat-title {
+ text-align: center;
+ background-color: grey;
+ padding-top: 20px;
+ padding-bottom: 20px;
+ color: white;
+ font-size: 20px;
+}
+
 .chat-textbox {
-    border-radius: 10px;
-    background-color: lavender;
-    width: 185px;
-    height: 50px;
-    border: 1px solid black;
-    position: absolute;
-    bottom: 0;
-    padding-left: 10px;
-    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 472px;
+    height: 20px;
+    background-color: grey;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .gameroom-title {
