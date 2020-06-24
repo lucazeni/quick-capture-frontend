@@ -39,3 +39,10 @@
     padding-left: 10px;
     margin-bottom: 20px;
 }
+
+.gameroom-title {
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    padding-bottom: 10px;
+}
