@@ -15,7 +15,11 @@ export default class Game extends React.Component {
         if (e.key === 'Enter') {
             e.target.value = "";
             this.setState({
-                messages: [...this.state.messages, <div className="messages">{this.state.message}</div>],
+                messages: [...this.state.messages, 
+                <div className="message-container">
+                    <div className="message-sender">zewcuh</div>
+                    <div className="message">{this.state.message}</div>
+                </div>],
             });
         }
     }
@@ -46,12 +50,13 @@ export default class Game extends React.Component {
                     <div className="game-container">
 
                     </div>
+                    {/* <div>test</div> */}
                     <div className="chat">
                         <div className="chat-title">Chat</div>
-                        <div className="chat-textbox">
-                            <input onChange={this.updateName} onKeyDown={this.appendMessage} placeholder="Type a message.." ></input>
+                        <div className="chat-textbox-container">
+                            <input className="chat-textbox" onChange={this.updateName} onKeyDown={this.appendMessage} placeholder="Type a message.." ></input>
                         </div>
-                        <div className="message-container">
+                        <div className="messages-container">
                             {this.state.messages.map(message => message)}
                         </div>
                         <div style={{ float: "left", clear: "both" }}
