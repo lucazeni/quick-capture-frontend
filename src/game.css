@@ -1,53 +1,74 @@
 .pregame-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
 }
 
 .game-container {
-    margin-left: 10px;
-    width: 900px;
-    height: 600px;
-    border: 10px solid white;
-    background-color: grey;
-    border-radius: 10px;
-    display: inline-block;
+  margin-left: 10px;
+  width: 900px;
+  height: 600px;
+  border: 10px solid white;
+  background-color: grey;
+  border-radius: 10px;
+  display: inline-block;
 }
 
-
 .chat {
-    background-color: 	lightgrey;
-    width: 200px;
-    height: 600px;
-    border: 10px solid white;
-    border-radius: 10px;
-    display: inline-block;
-    overflow-y: scroll;
- 
-
+  background-color: lightgrey;
+  width: 200px;
+  height: 600px;
+  border: 10px solid white;
+  border-radius: 10px;
+  display: inline-block;
+  overflow-y: scroll;
 }
 
 .chat-title {
- text-align: center;
- background-color: grey;
- padding-top: 20px;
- padding-bottom: 20px;
- color: white;
- font-size: 20px;
+  position: absolute;
+  text-align: center;
+  width: 190px;
+  background-color: grey;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: white;
+  font-size: 20px;
 }
 
 .chat-textbox {
-    text-align: center;
-    margin-top: 472px;
-    height: 20px;
-    background-color: grey;
-    padding-top: 20px;
-    padding-bottom: 20px;
+  position: absolute;
+  text-align: center;
+  margin-top: 540px;
+  height: 20px;
+  background-color: grey;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 190px;
 }
 
 .gameroom-title {
-    font-size: 50px;
-    text-align: center;
-    color: white;
-    padding-bottom: 10px;
+  font-size: 50px;
+  text-align: center;
+  color: white;
+  padding-bottom: 10px;
+}
+
+.message-container {
+  padding-top: 70px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 70px;
+}
+
+.messages {
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    word-wrap: break-word
 }
