@@ -9,8 +9,8 @@ export default class SearchBar extends React.Component {
     render() {
         return (
             <div className="search-bar">
-            <img className="search-icon" src={searchIcon}></img>
              <input onChange={this.props.filterRooms} className="text-box" type="text" placeholder="Search.." name="search2" maxlength="15"></input>
+             <img className="search-icon" src={searchIcon}></img>
             </div>
         );
     }
