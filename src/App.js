@@ -36,13 +36,15 @@ export default class ActivePage extends React.Component {
   }
 
   goToRoom = (roomName) => {
-    socket.emit('addRoom', this.state.id, roomName, this.state.nickname);
+    // temp
+    const roomId = '12345'
+    socket.emit('addRoom', this.state.id, roomId, roomName);
     this.setState({
       page: 'GAME',
       roomName
     })
   }
-  
+
   render() {
     if(this.state.page ==="HOME") {
       return (<div><User goToRooms={this.goToRooms} onChangeNickname={this.onChangeNickname}/></div>);
