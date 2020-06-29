@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import Connected from './connected';
+// import Connected from './connected';
 import App from './App';
 import Title from './title';
 import ActivePage from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Connected />
+    {/* <Connected /> */}
     <Title/>
     <ActivePage />
   </React.StrictMode>,
