@@ -6,11 +6,7 @@ import User from './user';
 
 import io from 'socket.io-client';
 var uuid = require("uuid");
-
-const socket = io.connect('http://localhost:8080', { reconnect: true });
-socket.on('dispatchRooms', (test) => {
-  console.log(test)
-});
+var socket = io.connect('http://localhost:8080', { reconnect: true });
 
 export default class ActivePage extends React.Component {
   constructor() {
@@ -18,9 +14,10 @@ export default class ActivePage extends React.Component {
     this.state = {
       id: uuid.v4(),
       nickname: '',
+      roomId: '',
+      roomName: '',
       page: 'HOME',
-      rooms: []
-      
+
     }
     this.goToRooms = this.goToRooms.bind(this);
     this.goToRoom = this.goToRoom.bind(this);
@@ -33,30 +30,48 @@ export default class ActivePage extends React.Component {
     })
   }
 
-  goToRooms = () => {
-    socket.emit('addUser', this.state.id, this.state.nickname);
-    this.setState({
+  goToRooms = async () => {
+    await this.setState({
       page: 'ROOMS'
     })
+    this.command('addUser');
   }
 
-  goToRoom = (roomId, roomName) => {
-    socket.emit('addRoom', this.state.id, roomId, roomName);
-    this.setState({
+  goToRoom = async (roomId, roomName) => {
+    console.log(roomId);
+    console.log(roomName);
+    await this.setState({
       page: 'GAME',
-      roomName
-    })
+      roomId: roomId,
+      roomName: roomName
+    });
+    this.command('addRoom');
+  }
+
+  command(c) {
+    if (c === 'addUser') {
+      socket.emit('addUser', this.state.id, this.state.nickname);
+    }
+    else if (c === 'addRoom') {
+      socket.emit('addRoom', this.state.id, this.state.roomId, this.state.roomName);
+    }
+  }
+
+  componentDidMount() {
+    socket.on('dispatchRooms', (playerMap) => {
+      console.log(playerMap);
+    });
   }
 
   render() {
-    if(this.state.page ==="HOME") {
-      return (<div><User goToRooms={this.goToRooms} onChangeNickname={this.onChangeNickname}/></div>);
+    if (this.state.page === "HOME") {
+      return (<div><User goToRooms={this.goToRooms} onChangeNickname={this.onChangeNickname} /></div>);
     }
-    else if (this.state.page ==="ROOMS") {
-      return(<div><Rooms goToRoom={this.goToRoom} nickname={this.state.nickname}/></div>);
+    else if (this.state.page === "ROOMS") {
+      return (<div><Rooms goToRoom={this.goToRoom} nickname={this.state.nickname} /></div>);
     }
-    else if (this.state.page ==="GAME") {
-      return(<div><Game roomName={this.state.roomName} /></div>);
+    else if (this.state.page === "GAME") {
+      return (<div><Game roomName={this.state.roomName} /></div>);
     }
     return (this.state.page);
   }
