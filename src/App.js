@@ -8,14 +8,19 @@ import io from 'socket.io-client';
 var uuid = require("uuid");
 
 const socket = io.connect('http://localhost:8080', { reconnect: true });
+socket.on('dispatchRooms', (test) => {
+  console.log(test)
+});
 
 export default class ActivePage extends React.Component {
   constructor() {
     super();
     this.state = {
+      id: uuid.v4(),
       nickname: '',
       page: 'HOME',
-      id: uuid.v4(),
+      rooms: []
+      
     }
     this.goToRooms = this.goToRooms.bind(this);
     this.goToRoom = this.goToRoom.bind(this);
@@ -35,9 +40,7 @@ export default class ActivePage extends React.Component {
     })
   }
 
-  goToRoom = (roomName) => {
-    // temp
-    const roomId = '12345'
+  goToRoom = (roomId, roomName) => {
     socket.emit('addRoom', this.state.id, roomId, roomName);
     this.setState({
       page: 'GAME',
