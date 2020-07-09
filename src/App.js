@@ -17,6 +17,7 @@ export default class ActivePage extends React.Component {
       roomId: '',
       roomName: '',
       page: 'HOME',
+      roomsList: {}
 
     }
     this.goToRooms = this.goToRooms.bind(this);
@@ -38,8 +39,6 @@ export default class ActivePage extends React.Component {
   }
 
   goToRoom = async (roomId, roomName) => {
-    console.log(roomId);
-    console.log(roomName);
     await this.setState({
       page: 'GAME',
       roomId: roomId,
@@ -58,9 +57,13 @@ export default class ActivePage extends React.Component {
   }
 
   componentDidMount() {
-    socket.on('dispatchRooms', (playerMap) => {
-      console.log(playerMap);
-    });
+    socket.on('dispatchRooms', async (roomsMap) => {
+       await this.setState({
+        roomsList: roomsMap
+       });
+    console.log(this.state.roomsList);
+  });
+
   }
 
   render() {
